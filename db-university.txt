@@ -14,7 +14,8 @@ QUERY 3: //TODO
 
 SELECT * 
 FROM `students` 
-WHERE DATEDIFF(CURRENT_DATE, `date_of_birth`); 
+WHERE `date_of_birth` <= DATE_SUB(CURRENT_DATE(), INTERVAL 30 year)
+ORDER BY `date_of_birth` DESC; 
 
 QUERY 4:
 
@@ -36,11 +37,11 @@ WHERE `level` = 'magistrale';
 
 QUERY 7:
 
-SELECT * 
+SELECT COUNT(*) AS 'numero dipartimenti' 
 FROM `departments`;
 
 QUERY 8:
 
-SELECT * 
+SELECT COUNT(*) AS 'insegnanti senza numero di telefono' 
 FROM `teachers`
 WHERE `phone` IS null;
