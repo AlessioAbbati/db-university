@@ -7,10 +7,18 @@ GROUP BY YEAR(`enrolment_date`);
 
 QUERY 2:
 
-
+SELECT COUNT(*) AS 'ufficio docenti',`office_address`
+FROM `teachers`
+GROUP BY `office_address`;
 
 QUERY 3:
 
-
+SELECT `exam_id`, AVG(`vote`) AS `average_vote`
+FROM `exam_student`
+GROUP BY `exam_id`;
 
 QUERY 4:
+
+SELECT  `department_id` AS 'dipartimenti', COUNT(`id`) AS 'corsi di laurea'
+FROM `degrees`
+GROUP BY `department_id`;
